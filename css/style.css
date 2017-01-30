@@ -1,3 +1,13 @@
+* {
+	text-align: center;
+	font-family: 'Ruslan Display', cursive;
+	margin: 0 auto;
+}
+
+body {
+	background: rgb(85,196,180);
+}
+
 td {
 	border: 1px solid black;
 	height: 150px;
@@ -5,29 +15,25 @@ td {
 	text-align: center;
 	font-size: 100px;
 	font-family: 'Ruslan Display', cursive;
+	background: white;
 }
-
-table {
-	margin: 0 auto;
+.available:hover {
+	background: rgb(221,209,193);
 }
 
 button {
-	margin: 0 auto;
+	font-size: 25px;
 }
 
 h1 {
-	text-align: center;
-	font-family: 'Ruslan Display', cursive;
 	font-size: 60px;
-	margin: 0 auto;
-}
-h4 {
-	text-align: center;
-	font-family: 'Ruslan Display', cursive;
-	margin: 0 auto;
 }
 h2 {
-	text-align: center;
-	font-family: 'Ruslan Display', cursive;
 	font-size: 45px;
+}
+h3 {
+	font-size: 35px;
+}
+h4 {
+	font-size: 25px;
 }
