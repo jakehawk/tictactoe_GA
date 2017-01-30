@@ -32,7 +32,8 @@ for (var i=1; i<4; i++){
 				logicArray[x][y] = 2;
 				this.className='';
 			}
-			checkWinner();
+			winnerFound = checkWinner();
+			console.log(winnerFound);
 			if (turnCount%2 === 0){
 				document.getElementById('turn').innerHTML = "Current turn: X";
 			} else {
@@ -56,93 +57,110 @@ document.getElementById('reset').onclick = function(){
 		];
 		console.log(xWins);
 	}
-	
+	winnerFound = false;
 }
 
 // Function to check the winner
-function checkWinner(tableID){
+function checkWinner(){
 	if (logicArray[0][0]===logicArray[0][1] && logicArray[0][0]===logicArray[0][2]){
 		winnerFound = true;
 		document.getElementsByTagName('h2')[0].innerHTML = document.getElementById('1_1').innerHTML+" is the winner!";
-		if(document.getElementById('1_1').innerHTML==='X'){
+		if(document.getElementById('1_1').innerHTML==='X' && !winnerFound){
 			xWins++;
 			document.getElementById('xWins').innerHTML = "X: "+xWins+" wins";
-		} else {
+		} else if(!winnerFound) {
 			oWins++;
 			document.getElementById('oWins').innerHTML = "O: "+oWins+" wins";
 		}
+		return true;
+
 	} else if (logicArray[1][0]===logicArray[1][1] && logicArray[1][0]===logicArray[1][2]) {
 		winnerFound = true;
 		document.getElementsByTagName('h2')[0].innerHTML = document.getElementById('2_1').innerHTML+" is the winner!";
-		if(document.getElementById('2_1').innerHTML==='X'){
+		if(document.getElementById('2_1').innerHTML==='X' && !winnerFound){
 			xWins++;
 			document.getElementById('xWins').innerHTML = "X: "+xWins+" wins";
-		} else {
+		} else if(!winnerFound) {
 			oWins++;
 			document.getElementById('oWins').innerHTML = "O: "+oWins+" wins";
 		}
+		return true;
+
 	} else if (logicArray[2][0]===logicArray[2][1] && logicArray[2][0]===logicArray[2][2]) {
 		winnerFound = true;
 		document.getElementsByTagName('h2')[0].innerHTML = document.getElementById('3_1').innerHTML+" is the winner!";
-		if(document.getElementById('3_1').innerHTML==='X'){
+		if(document.getElementById('3_1').innerHTML==='X' && !winnerFound){
 			xWins++;
 			document.getElementById('xWins').innerHTML = "X: "+xWins+" wins";
-		} else {
+		} else if(!winnerFound) {
 			oWins++;
 			document.getElementById('oWins').innerHTML = "O: "+oWins+" wins";
 		}
+		return true;
+
 	} else if (logicArray[0][0]===logicArray[1][0] && logicArray[1][0]===logicArray[2][0]) {
 		winnerFound = true;
 		document.getElementsByTagName('h2')[0].innerHTML = document.getElementById('1_1').innerHTML+" is the winner!";
-		if(document.getElementById('1_1').innerHTML==='X'){
+		if(document.getElementById('1_1').innerHTML==='X' && !winnerFound){
 			xWins++;
 			document.getElementById('xWins').innerHTML = "X: "+xWins+" wins";
-		} else {
+		} else if(!winnerFound) {
 			oWins++;
 			document.getElementById('oWins').innerHTML = "O: "+oWins+" wins";
 		}
+		return true;
+
 	} else if (logicArray[0][1]===logicArray[1][1] && logicArray[1][1]===logicArray[2][1]) {
 		winnerFound = true;
 		document.getElementsByTagName('h2')[0].innerHTML = document.getElementById('1_2').innerHTML+" is the winner!";
-		if(document.getElementById('1_2').innerHTML==='X'){
+		if(document.getElementById('1_2').innerHTML==='X' && !winnerFound){
 			xWins++;
 			document.getElementById('xWins').innerHTML = "X: "+xWins+" wins";
-		} else {
+		} else if(!winnerFound) {
 			oWins++;
 			document.getElementById('oWins').innerHTML = "O: "+oWins+" wins";
 		}
+		return true;
+
 	} else if (logicArray[0][2]===logicArray[1][2] && logicArray[1][2]===logicArray[2][2]) {
 		winnerFound = true;
 		document.getElementsByTagName('h2')[0].innerHTML = document.getElementById('1_3').innerHTML+" is the winner!";
-		if(document.getElementById('1_3').innerHTML==='X'){
+		if(document.getElementById('1_3').innerHTML==='X' && !winnerFound){
 			xWins++;
 			document.getElementById('xWins').innerHTML = "X: "+xWins+" wins";
-		} else {
+		} else if(!winnerFound) {
 			oWins++;
 			document.getElementById('oWins').innerHTML = "O: "+oWins+" wins";
 		}
+		return true;
+
 	} else if (logicArray[0][0]===logicArray[1][1] && logicArray[1][1]===logicArray[2][2]) {
 		winnerFound = true;
 		document.getElementsByTagName('h2')[0].innerHTML = document.getElementById('1_1').innerHTML+" is the winner!";
-		if(document.getElementById('1_1').innerHTML==='X'){
+		if(document.getElementById('1_1').innerHTML==='X' && !winnerFound){
 			xWins++;
 			document.getElementById('xWins').innerHTML = "X: "+xWins+" wins";
-		} else {
+		} else if(!winnerFound) {
 			oWins++;
 			document.getElementById('oWins').innerHTML = "O: "+oWins+" wins";
 		}
+		return true;
+
 	} else if (logicArray[0][2]===logicArray[1][1] && logicArray[1][1]===logicArray[2][0]) {
 		winnerFound = true;
 		document.getElementsByTagName('h2')[0].innerHTML = document.getElementById('1_3').innerHTML+" is the winner!";
-		if(document.getElementById('1_3').innerHTML==='X'){
+		if(document.getElementById('1_3').innerHTML==='X' && !winnerFound){
 			xWins++;
 			document.getElementById('xWins').innerHTML = "X: "+xWins+" wins";
-		} else {
+		} else if(!winnerFound) {
 			oWins++;
 			document.getElementById('oWins').innerHTML = "O: "+oWins+" wins";
 		}
+		return true;
 	} else if (turnCount === 9){
-		document.getElementsByTagName('h2')[0].innerHTML = "Cats game!"
+		document.getElementsByTagName('h2')[0].innerHTML = "Cats game!";
+		return true;
 	}
 	console.log("End of checkwin: "+xWins)
+	return false;
 }
